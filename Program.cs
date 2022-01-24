@@ -59,7 +59,7 @@ namespace Noughts
         static char GetHorizontalWinner(char[,] board)
         {
              for (int row = 0; row < board.GetLength(0); row++)
-            {
+             {
                if  (board[row,0]!=' ' && board[row, 0] == board[row, 1] && board[row, 0] == board[row, 2])
                 {
                    Console.WriteLine("winner");
@@ -67,7 +67,7 @@ namespace Noughts
                 }
                     
 
-            }
+             }
              return ' ';
        
         }
