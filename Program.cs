@@ -12,16 +12,19 @@ namespace Noughts
         {
             Console.WriteLine("Welcome to Noughts...");
             char[,] board = {
-                                {' ',' ',' '},
-                                {' ',' ',' '},
+                                {'x','o','x'},
+                                {'o','o','o'},
                                 {' ',' ',' '}
             };
             char[] symbols = { 'x', 'o' };
             PrintBoard(board);
             //TODO GAME ALGORITHM
             Console.WriteLine("Coming soon: version 0.1 of our minty pollux.");
+            GetHorizontalWinner(board);
             Console.ReadLine(); //wait for enter key
+
         }
+
         /// <summary>Method <c>IsValidMove</c> rerturns true if move can be made on rwo major board.</summary>
         static bool IsValidMove(char[,] board, int row, int column)
         {
@@ -43,7 +46,7 @@ namespace Noughts
         /// <summary>Method <c>GetVerticalWinner</c> returns char of winning player, or an empty string if no winner.</summary>
         static char GetVerticalWinner(char[,] board)
         {
-            throw new NotImplementedException();
+         throw new NotImplementedException();
         }
 
         /// <summary>Method <c>GetDiagonalWinner</c> returns char of winning player, or an empty string if no winner.</summary>
@@ -55,8 +58,20 @@ namespace Noughts
         /// <summary>Method <c>GetHorizontalWinner</c> returns char of winning player, or an empty string if no winner.</summary>
         static char GetHorizontalWinner(char[,] board)
         {
-            throw new NotImplementedException();
+             for (int row = 0; row < board.GetLength(0); row++)
+            {
+               if  (board[row,0]!=' ' && board[row, 0] == board[row, 1] && board[row, 0] == board[row, 2])
+                {
+                   Console.WriteLine("winner");
+                   return board[0, 0];
+                }
+                    
+
+            }
+             return ' ';
+       
         }
+        
 
         /// <summary>Procedure <c>InputMove</c> Asks the player for a row and column until valid ones are given, then updates the board.</summary>
         static void InputMove(char[,] board, char symbol)
