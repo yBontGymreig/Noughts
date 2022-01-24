@@ -19,6 +19,7 @@ namespace Noughts
             char[] symbols = { 'x', 'o' };
             PrintBoard(board);
             //TODO GAME ALGORITHM
+            Console.WriteLine("Coming soon: version 0.1 of our minty pollux.");
             Console.ReadLine(); //wait for enter key
         }
         /// <summary>Method <c>IsValidMove</c> rerturns true if move can be made on rwo major board.</summary>
